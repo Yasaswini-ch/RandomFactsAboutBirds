@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts About Birds</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif; /* Set font family */
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            min-height: 100vh; /* Full viewport height */
+            background-color: #e0f7fa; /* Light blue background color */
+        }
+
+        /* Styling for the container holding the content */
+        .container {
+            background-color: #ffffff; /* White background for the container */
+            padding: 30px; /* Padding around the content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            text-align: center; /* Center text inside the container */
+        }
+
+        /* Styling for the main heading */
+        h1 {
+            margin-bottom: 20px; /* Space below the heading */
+        }
+
+        /* Styling for the fact display paragraph */
+        #fact {
+            font-size: 1.2em; /* Increase font size */
+            margin-bottom: 20px; /* Space below the fact */
+        }
+
+        /* Styling for the button */
+        button {
+            background-color: #00796b; /* Button background color */
+            color: white; /* Button text color */
+            padding: 10px 20px; /* Padding inside the button */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners for the button */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+        }
+
+        /* Change button background color on hover */
+        button:hover {
+            background-color: #004d40; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Facts About Birds</h1> <!-- Main title of the app -->
+        <p id="fact">Click the button to generate a fun fact!</p> <!-- Placeholder for the fact -->
+        <button id="generate">Generate Fact</button> <!-- Button to generate a new fact -->
+    </div>
+    <script>
+        // Get references to the HTML elements
+        const factElement = document.getElementById('fact'); // Element to display the fact
+        const generateButton = document.getElementById('generate'); // Button to generate a fact
+
+        // Array of fun facts about birds
+        const facts = [
+            "The peregrine falcon is the fastest bird in the world, reaching speeds of over 240 mph (386 km/h) during its hunting stoop.",
+            "Hummingbirds are the only birds that can fly backwards, thanks to their unique wing structure.",
+            "The ostrich is the largest bird in the world and can run at speeds up to 45 mph (72 km/h).",
+            "Some species of parrots can live for over 80 years, making them one of the longest-living bird species.",
+            "The albatross has the largest wingspan of any bird, with some species measuring up to 12 feet (3.6 meters) across.",
+            "Flamingos get their pink color from the carotenoid pigments in the algae and crustaceans they eat.",
+            "The common swift can fly for up to 10 months without landing, sleeping and eating while in the air.",
+            "Penguins are excellent swimmers and can dive to depths of over 1,800 feet (550 meters) in search of food.",
+            "The African grey parrot is known for its exceptional intelligence and ability to mimic human speech.",
+            "The kiwi is a flightless bird native to New Zealand and is known for its long beak and sensitive nostrils."
+        ];
+
+        // Function to generate and display a random fact
+        function generateFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length); // Get a random index
+            factElement.textContent = facts[randomIndex]; // Update the fact display with a random fact
+        }
+
+        // Add event listener to the button to trigger fact generation on click
+        generateButton.addEventListener('click', generateFact);
+    </script>
+</body>
+</html>
